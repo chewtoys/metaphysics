@@ -71,7 +71,7 @@
     "graphql-depth-limit": "^1.1.0",
     "graphql-middleware": "^1.2.5",
     "graphql-relay": "^0.5.4",
-    "graphql-tools": "^3.1.1",
+    "graphql-tools": "^4.0.4",
     "graphql-type-json": "^0.1.4",
     "heapdump": "^0.3.9",
     "hot-shots": "^5.6.1",
