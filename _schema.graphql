@@ -38,7 +38,7 @@ type AggregationCount {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   count: Int
   name: String
   sortable_id: String
@@ -268,7 +268,7 @@ type Article {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   cached: Int
   author: Author
   channel_id: String
@@ -328,7 +328,7 @@ type Artist {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -670,7 +670,7 @@ type ArtistItem {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -975,7 +975,7 @@ type Artwork {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -1181,7 +1181,7 @@ type ArtworkContextAuction {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -1309,7 +1309,7 @@ type ArtworkContextFair {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -1446,7 +1446,7 @@ type ArtworkContextPartnerShow {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -1551,7 +1551,7 @@ type ArtworkContextSale {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -1690,7 +1690,7 @@ type ArtworkFilterGene {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -1751,7 +1751,7 @@ type ArtworkFilterTag {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -1817,8 +1817,15 @@ type ArtworkInfoRow {
 
 # An inquiry on an Artwork
 type ArtworkInquiry {
+  # A globally unique ID.
+  __id: ID!
+
+  # A type-specific ID.
+  gravityID: String!
+
+  # A type-specific Gravity Mongo Document ID.
+  _id: String!
   artwork: Artwork!
-  id: ID
   impulse_conversation_id: String
 }
 
@@ -1845,7 +1852,7 @@ type ArtworkItem {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -2018,7 +2025,7 @@ type ArtworkLayer {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   artworks: [Artwork]
 
   # A connection of artworks from a Layer.
@@ -2075,8 +2082,14 @@ enum ArtworkSorts {
 }
 
 type ArtworkVersion {
-  # ID of the order line item
-  id: ID!
+  # A globally unique ID.
+  __id: ID!
+
+  # A type-specific ID.
+  gravityID: String!
+
+  # A type-specific Gravity Mongo Document ID.
+  _id: String!
 
   # Artwork title
   title: String
@@ -2096,8 +2109,8 @@ type ArtworkVersion {
 
 # An asset which is assigned to a consignment submission
 type Asset {
-  # Convection asset ID.
-  id: String!
+  # A type-specific ID likely used as a database ID.
+  internalID: ID!
 
   # The convection submission ID
   submission_id: String
@@ -2111,8 +2124,8 @@ type Asset {
 
 # Fields of an attachment (currently from Radiation)
 type Attachment {
-  # Attachment id.
-  id: String!
+  # A type-specific ID likely used as a database ID.
+  internalID: ID!
 
   # Content type of file.
   content_type: String!
@@ -2124,7 +2137,14 @@ type Attachment {
 
 # Collection of fields that describe attribution class
 type AttributionClass {
-  id: String!
+  # A globally unique ID.
+  __id: ID!
+
+  # A type-specific ID.
+  gravityID: String!
+
+  # A type-specific Gravity Mongo Document ID.
+  _id: String!
 
   # Shortest form of attribution class display
   name: String
@@ -2162,7 +2182,7 @@ type AuctionResult {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   title: String
   artist_id: String!
   date(
@@ -2237,7 +2257,7 @@ type Author {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   name: String
   href: String
     @deprecated(
@@ -2251,7 +2271,7 @@ type Bidder {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   created_at(
     # This arg is deprecated, use timezone instead
     convert_to_utc: Boolean
@@ -2270,7 +2290,7 @@ type BidderPosition {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   created_at(
     # This arg is deprecated, use timezone instead
     convert_to_utc: Boolean
@@ -2426,7 +2446,7 @@ type BuyersPremium {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -2446,8 +2466,8 @@ type BuyersPremium {
 }
 
 type BuyOrder {
-  # ID of the order
-  id: ID
+  # A type-specific ID likely used as a database ID.
+  internalID: ID!
 
   # Order Mode
   mode: OrderModeEnum
@@ -2664,7 +2684,14 @@ enum CancelReasonType {
 
 # Fields of partner category (currently from Gravity).
 type Category {
-  id: String!
+  # A globally unique ID.
+  __id: ID!
+
+  # A type-specific ID.
+  gravityID: String!
+
+  # A type-specific Gravity Mongo Document ID.
+  _id: String!
   category_type: String
   internal: Boolean
   name: String
@@ -2731,7 +2758,7 @@ type Collection {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -2761,7 +2788,7 @@ type CollectorProfileType {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   email: String
   name: String
   confirmed_buyer_at(
@@ -2818,7 +2845,7 @@ type ConsignmentSubmission {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -2912,8 +2939,8 @@ type Conversation {
   # A globally unique ID.
   __id: ID!
 
-  # Impulse id.
-  id: String
+  # A type-specific ID likely used as a database ID.
+  internalID: ID!
 
   # Gravity inquiry id.
   inquiry_id: String
@@ -3010,8 +3037,8 @@ type ConversationEdge {
 
 # The participant who started the conversation, currently always a User
 type ConversationInitiator {
-  # Impulse id.
-  id: String!
+  # A type-specific ID likely used as a database ID.
+  internalID: ID!
 
   # The type of participant, e.g. Partner or User
   type: String!
@@ -3030,8 +3057,8 @@ union ConversationItemType = Artwork | Show
 
 # The participant responding to the conversation, currently always a Partner
 type ConversationResponder {
-  # Impulse id.
-  id: String!
+  # A type-specific ID likely used as a database ID.
+  internalID: ID!
 
   # The type of participant, e.g. Partner or User
   type: String!
@@ -3199,7 +3226,7 @@ type CreditCard {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -3343,8 +3370,8 @@ type DeleteCreditCardPayload {
 
 # Fields of a delivery (currently from Radiation)
 type Delivery {
-  # Delivery id.
-  id: String!
+  # A type-specific ID likely used as a database ID.
+  internalID: ID!
 
   # Masked email w/ display name.
   full_transformed_email: String!
@@ -3396,7 +3423,7 @@ type DoNotUseThisPartner {
   given_name: String
 
   # Uniq ID for this partner
-  id: ID!
+  gravityID: ID!
   relative_size: Int
 
   # Uniq, friendly identifier for this artist
@@ -3446,7 +3473,7 @@ type EditionSet {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   dimensions: dimensions
   edition_of: String
   is_acquireable: Boolean
@@ -3501,7 +3528,7 @@ type ExternalPartner {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   city: String
   name: String
 }
@@ -3511,7 +3538,7 @@ type Fair {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -3692,11 +3719,17 @@ type FairEdge {
 }
 
 type FairExhibitor {
+  # A globally unique ID.
+  __id: ID!
+
+  # A type-specific ID.
+  gravityID: String!
+
+  # A type-specific Gravity Mongo Document ID.
+  _id: String!
+
   # Exhibitor name
   name: String
-
-  # Exhibitors id
-  id: String
 
   # Exhibitors _id
   partner_id: String
@@ -3728,8 +3761,8 @@ type FairSponsoredContent {
 }
 
 type FeaturedLinkItem {
-  # Attempt to get the ID of the entity of the FeaturedLink
-  id: String
+  # A type-specific ID.
+  gravityID: String
   href: String
   image: Image
   initials(length: Int = 3): String
@@ -3742,7 +3775,7 @@ type Feedback {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # Feedback message
   message: String!
@@ -3837,7 +3870,7 @@ type FollowArtist {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 }
 
 # A connection to a list of items.
@@ -3982,7 +4015,7 @@ type FollowGene {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 }
 
 # A connection to a list of items.
@@ -4123,7 +4156,7 @@ type Gene {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -4287,7 +4320,14 @@ type GeneEdge {
 }
 
 type GeneFamily {
-  id: String!
+  # A globally unique ID.
+  __id: ID!
+
+  # A type-specific ID.
+  gravityID: String!
+
+  # A type-specific Gravity Mongo Document ID.
+  _id: String!
   name: String!
   genes: [Gene]
 }
@@ -4315,7 +4355,7 @@ type GeneItem {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -4450,7 +4490,7 @@ type HighestBid {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   created_at(
     # This arg is deprecated, use timezone instead
     convert_to_utc: Boolean
@@ -4485,7 +4525,7 @@ type HighlightedArticle {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   cached: Int
   author: Author
   channel_id: String
@@ -4520,7 +4560,7 @@ type HighlightedShow {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -4730,7 +4770,7 @@ type HomePageHeroUnit {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -4782,7 +4822,7 @@ type HomePageModuleContextFair {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -4928,7 +4968,7 @@ type HomePageModuleContextGene {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -5061,7 +5101,7 @@ type HomePageModuleContextSale {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -5189,9 +5229,10 @@ type HomePageModuleContextTrending {
 }
 
 type HomePageModulesParams {
+  # A type-specific ID likely used as a database ID.
+  internalID: ID!
   followed_artist_id: ID
   gene_id: String
-  id: ID
   medium: String
   price_range: String
   related_artist_id: ID
@@ -5206,7 +5247,7 @@ type Image {
   height: Int
 
   # A type-specific ID.
-  id: String
+  gravityID: String
   image_url: String
   image_versions: [String]
   is_default: Boolean
@@ -5245,7 +5286,7 @@ type Invoice {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # Lewitt's invoice id.
   lewitt_invoice_id: String!
@@ -5290,7 +5331,7 @@ type Location {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   cached: Int
   address: String
   address_2: String
@@ -5332,7 +5373,7 @@ type LotStanding {
 
 # Object representing a collection page
 type MarketingCollection {
-  id: ID!
+  internalID: ID!
 
   # slug version of title, used for pretty URLs (e.g. `kaws-prints` for Kaws Prints
   slug: String!
@@ -5412,7 +5453,7 @@ type MarketingCollectionCategory {
 }
 
 type MarketingCollectionQuery {
-  id: ID
+  internalID: ID
   acquireable: Boolean
   aggregations: [String!]
   artist_ids: [String!]
@@ -5451,7 +5492,7 @@ type Me {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A list of the current user’s consignment submissions
   consignment_submissions(
@@ -5653,8 +5694,8 @@ type Message {
   # A globally unique ID.
   __id: ID!
 
-  # Impulse message id.
-  id: String!
+  # A type-specific ID likely used as a database ID.
+  internalID: ID!
 
   # Impulse message id.
   impulse_id: String!
@@ -5973,8 +6014,8 @@ enum NotificationsFeedItemStatus {
 }
 
 type Offer {
-  # ID of the offer
-  id: ID
+  # A type-specific ID likely used as a database ID.
+  internalID: ID!
   createdAt(
     # This arg is deprecated, use timezone instead
     convert_to_utc: Boolean
@@ -6089,8 +6130,8 @@ type OfferEdge {
 }
 
 type OfferOrder {
-  # ID of the order
-  id: ID
+  # A type-specific ID likely used as a database ID.
+  internalID: ID!
 
   # Order Mode
   mode: OrderModeEnum
@@ -6318,8 +6359,8 @@ type OpeningHoursText {
 union OpeningHoursUnion = OpeningHoursArray | OpeningHoursText
 
 interface Order {
-  # ID of the order
-  id: ID
+  # A type-specific ID likely used as a database ID.
+  id: ID!
 
   # Order Mode
   mode: OrderModeEnum
@@ -6550,7 +6591,7 @@ type OrderedSet {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   cached: Int
   description: String
   key: String
@@ -6560,8 +6601,8 @@ type OrderedSet {
 }
 
 type OrderFulfillment {
-  # ID of the fulfillment
-  id: ID
+  # A type-specific ID likely used as a database ID.
+  internalID: ID!
 
   # Fulfillment Courier
   courier: String
@@ -6602,8 +6643,8 @@ enum OrderFulfillmentType {
 }
 
 type OrderLineItem {
-  # ID of the order line item
-  id: ID
+  # A type-specific ID likely used as a database ID.
+  internalID: ID!
 
   # Artwork that is being ordered
   artwork: Artwork
@@ -6777,7 +6818,7 @@ type Partner {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -6848,7 +6889,7 @@ type PartnerArtist {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   artist: Artist
   biography: String
   counts: PartnerArtistCounts
@@ -6893,7 +6934,7 @@ type PartnerArtistEdge {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   artist: Artist
   biography: String
   counts: PartnerArtistCounts
@@ -6909,7 +6950,7 @@ type PartnerCategory {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   cached: Int
   category_type: CategoryType
   name: String
@@ -7032,7 +7073,7 @@ type PartnerShow {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -7231,7 +7272,7 @@ type Profile {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -7905,7 +7946,7 @@ type Sale {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -8033,7 +8074,7 @@ type SaleArtwork {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -8135,7 +8176,14 @@ type SaleArtworkEdge {
 }
 
 type SaleArtworkHighestBid {
-  id: ID
+  # A globally unique ID.
+  __id: ID!
+
+  # A type-specific ID.
+  gravityID: String!
+
+  # A type-specific Gravity Mongo Document ID.
+  _id: String!
   created_at(
     # This arg is deprecated, use timezone instead
     convert_to_utc: Boolean
@@ -8352,7 +8400,7 @@ type SearchableItem {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -8598,7 +8646,7 @@ type Show {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -8993,7 +9041,7 @@ type Tag {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
@@ -9088,7 +9136,7 @@ type UpdateCollectorProfilePayload {
   __id: ID!
 
   # A type-specific ID.
-  id: String!
+  gravityID: String!
   email: String
   name: String
   confirmed_buyer_at(
@@ -9173,9 +9221,6 @@ type UpdateMyProfilePayload {
 }
 
 input UpdateSubmissionMutationInput {
-  # A type-specific ID.
-  id: String!
-
   # The gravity ID for an Artist
   artist_id: String!
 
@@ -9247,8 +9292,8 @@ type User {
   # A globally unique ID.
   __id: ID!
 
-  # User id.
-  id: String!
+  # A type-specific ID.
+  gravityID: String!
 
   # A type-specific Gravity Mongo Document ID.
   _id: String!
